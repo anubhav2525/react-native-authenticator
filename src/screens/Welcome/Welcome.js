@@ -1,22 +1,29 @@
-import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import tailwindColor from '../../assests/theme/tailwindColor';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const Welcome = () => {
   const navigation = useNavigation();
 
   const goToSignIn = () => {
-    navigation.navigate('Signin')
-  }
+    navigation.navigate('Signin');
+  };
 
   const goToSignUp = () => {
-    navigation.navigate('Signup')
-  }
+    navigation.navigate('Signup');
+  };
 
   return (
-    <SafeAreaView style={styles.safeAreaView}>
+    <SafeAreaView style={styles.container}>
       <StatusBar hidden={true} />
 
       <View>
@@ -24,10 +31,13 @@ const Welcome = () => {
       </View>
 
       <View>
-        <Image style={styles.imageHolder} source={require('../../assests/image/welcome.png')} />
+        <Image
+          style={styles.imageHolder}
+          source={require('../../assests/image/welcome.png')}
+        />
       </View>
 
-      <View>
+      <View style={styles.btns}>
         {/* btn Sign up  */}
         <TouchableOpacity style={styles.btnSignUp} onPress={goToSignUp}>
           <Text style={styles.btnSignUpText}>Sign Up</Text>
@@ -40,24 +50,24 @@ const Welcome = () => {
             <Text style={styles.btnSignInText}> Sign in</Text>
           </TouchableOpacity>
         </View>
+
       </View>
-
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Welcome
+export default Welcome;
 
 const styles = StyleSheet.create({
-  safeAreaView: {
+  container: {
     flex: 1,
     backgroundColor: tailwindColor.blue[700],
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   heading: {
     fontSize: 40,
-    fontWeight: "700",
+    fontWeight: '700',
     color: tailwindColor.slate[200],
     padding: 10,
   },
@@ -65,32 +75,39 @@ const styles = StyleSheet.create({
     height: 300,
     width: 300,
   },
+  btns: {
+    width:'70%'
+
+  },
   btnSignUp: {
     backgroundColor: tailwindColor.slate[300],
-    paddingHorizontal: 70,
-    paddingVertical: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
     borderRadius: 5,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   btnSignUpText: {
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: '600',
     color: tailwindColor.gray[800],
   },
   btnSignInView: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 15,
-  }, btnSignInHeading: {
+  },
+  btnSignInHeading: {
     fontSize: 13,
     color: tailwindColor.slate[200],
-  }, btnSignIn: {
+  },
+  btnSignIn: {
     padding: 2,
-  }, btnSignInText: {
+  },
+  btnSignInText: {
     color: tailwindColor.yellow[300],
     fontSize: 13,
-  }
-})
+  },
+});

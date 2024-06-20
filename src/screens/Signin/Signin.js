@@ -56,7 +56,9 @@ const Signin = () => {
               />
             </View>
 
-            <TouchableOpacity style={styles.btnForget}>
+            <TouchableOpacity
+              style={styles.btnForget}
+              onPress={() => navigation.navigate('Forget')}>
               <Text style={styles.btnForgetText}>Forget Password ?</Text>
             </TouchableOpacity>
 

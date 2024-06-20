@@ -50,7 +50,6 @@ const Welcome = () => {
             <Text style={styles.btnSignInText}> Sign in</Text>
           </TouchableOpacity>
         </View>
-
       </View>
     </SafeAreaView>
   );
@@ -76,8 +75,7 @@ const styles = StyleSheet.create({
     width: 300,
   },
   btns: {
-    width:'70%'
-
+    width: '70%',
   },
   btnSignUp: {
     backgroundColor: tailwindColor.slate[300],
@@ -100,14 +98,15 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   btnSignInHeading: {
-    fontSize: 13,
+    fontSize: 16,
     color: tailwindColor.slate[200],
   },
   btnSignIn: {
     padding: 2,
+    margin: 4,
   },
   btnSignInText: {
     color: tailwindColor.yellow[300],
-    fontSize: 13,
+    fontSize: 16,
   },
 });

@@ -51,7 +51,9 @@ const Forget = () => {
           </View>
 
           <View style={styles.form}>
-            <TouchableOpacity style={styles.btnSignUp}>
+            <TouchableOpacity
+              style={styles.btnSignUp}
+              onPress={() => navigation.navigate('Reset')}>
               <Text style={styles.btnSignUpText}>Submit</Text>
             </TouchableOpacity>
           </View>
@@ -128,9 +130,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   para: {
-
     color: tailwindColor.gray[500],
-    paddingHorizontal:30, 
+    paddingHorizontal: 30,
   },
   formSpace: {
     flex: 1,
